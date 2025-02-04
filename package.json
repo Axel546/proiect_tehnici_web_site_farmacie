@@ -1,0 +1,19 @@
+{
+  "name": "farmacia_vitalis",
+  "version": "1.0.0",
+  "description": "Farmacie online",
+  "main": "index.js",
+  "scripts": {
+    "build-scss": "sass scss/:resurse/css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axel546/proiect_tehnici_web_site_farmacie.git"
+  },
+  "author": "Zob Alexandru-Mihai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Axel546/proiect_tehnici_web_site_farmacie/issues"
+  },
+  "homepage": "https://github.com/Axel546/proiect_tehnici_web_site_farmacie#readme"
+}

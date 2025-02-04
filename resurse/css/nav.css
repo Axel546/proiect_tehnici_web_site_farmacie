@@ -1,0 +1,94 @@
+.nav-toggle {
+  display: none;
+}
+
+.main-nav {
+  background: var(--secondary-color-1);
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  left: -1.5%;
+  border-radius: 10px;
+}
+.main-nav .nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.main-nav .nav-list > li {
+  position: relative;
+}
+.main-nav .nav-list > li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  position: relative;
+}
+.main-nav .nav-list > li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #45AAB1, #56D2DB, #41A1A8);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+.main-nav .nav-list > li a:hover::after {
+  opacity: 1;
+  top: 100%;
+  transform: translateY(0);
+}
+.main-nav .nav-list > li .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #52CAD3;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.main-nav .nav-list > li .submenu li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+.main-nav .nav-list > li .submenu li a:hover {
+  background: #409DA4;
+}
+.main-nav .nav-list > li:first-child:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 0.3rem;
+  left: 1rem;
+  z-index: 1000;
+}
+.burger-menu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/*# sourceMappingURL=nav.css.map */
