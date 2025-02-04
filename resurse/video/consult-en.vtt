@@ -1,0 +1,24 @@
+WEBVTT
+
+STYLE
+::cue {
+            background-color: white;
+            color: #333;
+            text-align: center;
+            top: 5px;
+}
+::cue(i) {
+            font-style: italic;
+}
+
+1
+00:00:00.000 --> 00:00:05.000
+Measuring <i>blood pressure</i> is offered in our pharmacy
+
+2
+00:00:07.500 --> 00:00:12.500
+The pharmacists are trained to carry out this procedure
+
+3
+00:00:15.000 --> 00:00:20.000
+You can also opt for this procedure in the affiliated hospitals

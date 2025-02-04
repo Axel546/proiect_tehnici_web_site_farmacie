@@ -66,7 +66,10 @@
 .main-nav .nav-list > li .submenu li a:hover {
   background: #409DA4;
 }
-.main-nav .nav-list > li:first-child:hover .submenu {
+.main-nav .nav-list > li .submenu li a::after {
+  display: none;
+}
+.main-nav .nav-list > li:hover .submenu {
   opacity: 1;
   visibility: visible;
 }

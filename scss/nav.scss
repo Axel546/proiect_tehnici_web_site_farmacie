@@ -85,11 +85,15 @@ $gradient-colors: (#45AAB1, #56D2DB, #41A1A8);
                         &:hover {
                             background: $hover-bg;
                         }
+
+                        &::after{
+                            display: none;
+                        }
                     }
                 }
             }
 
-            &:first-child:hover .submenu {
+            &:hover .submenu {
                 opacity: 1;
                 visibility: visible;
             }

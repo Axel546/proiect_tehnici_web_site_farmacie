@@ -43,7 +43,7 @@
 .main-nav .nav-list > li .submenu li a {
   padding-left: 2rem;
 }
-.main-nav .nav-list > li:first-child:hover .submenu {
+.main-nav .nav-list > li:hover .submenu {
   opacity: 1;
   visibility: visible;
   height: auto;

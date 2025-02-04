@@ -1,0 +1,24 @@
+WEBVTT
+
+STYLE
+::cue {
+            background-color: white;
+            color: #333;
+            text-align: center;
+            top: 5px;
+}
+::cue(i) {
+            font-style: italic;
+}
+
+1
+00:00:00.000 --> 00:00:05.000
+Masurarea <i>tensiunii arteriale</i> este unul dintre serviciile noastre
+
+2
+00:00:07.500 --> 00:00:12.500
+Farmacistii sunt pregatiti pentru a desfasura aceasta procedura.
+
+3
+00:00:15.000 --> 00:00:20.000
+Puteti opta pentru masurare si in spitalele partenere

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <%- include('../fragmente/head.ejs') %>
+        <meta name="keywords" content="farmacie, medicamente, produse farmaceutice, sănătate, Vitalis, IMC, BMI">
+        <meta name="description" content="Farmacia Vitalis oferă o gamă largă de medicamente, suplimente alimentare, produse de îngrijire personală și remedii naturiste, toate disponibile online. Beneficiază de livrare rapidă și consultanță pentru sănătatea ta, cu produse de calitate pentru întreaga familie. Descoperă soluții eficiente pentru tratamentele tale zilnice, cu livrare directă la ușa ta!">    
+        <title>Farmacia Vitalis</title>
+    </head>
+    <body>
+        <%- include('../fragmente/header.ejs') %>
+        <main>
+            <div id="grid-pagina">
+                <!-- Secțiunea 1 cu prezentarea -->
+                <section id="prezentare">
+                    <h2>Prezentare</h2>
+                    <section>
+                        <div class="container">
+                            <figure>
+                                <picture>
+                                    <source srcset="/resurse/imagini/produse/produse-mici.jpg" media="(max-width: 600px)">
+                                    <source srcset="/resurse/imagini/produse/produse-medii.jpg" media="(max-width: 1024px)">
+                                    <img src="/resurse/imagini/produse/produse-mari.jpg" alt="Produse farmaceutice de la Farmacia Vitalis">
+                                </picture>
+                                <figcaption>Oferim produse farmaceutice de calitate pentru <i>sănătatea</i> ta.</figcaption>
+                            </figure>
+                            <div class="content">
+                                <h3>Grija pentru sănătatea ta</h2>
+                                <p>Cu o experiență de peste 15 ani în domeniul farmaceutic, Farmacia Vitalis oferă servicii medicale
+                                    de înaltă calitate și consiliere specializată pentru toți pacienții noștri. Suntem aici pentru tine 24/7,
+                                    oferind asistență și sfaturi profesionale pentru îmbunătățirea sănătății tale.</p>
+                                <p>În cadrul farmaciei noastre, vei găsi o gamă variată de medicamente, suplimente nutritive, produse
+                                    de îngrijire personală și soluții naturale pentru un stil de viață sănătos. Echipa noastră de
+                                    specialiști este mereu la dispoziția ta pentru a-ți oferi cele mai bune recomandări și informații
+                                    despre tratamente eficiente.</p>
+                                <p>Fie că ai nevoie de un sfat avizat sau de produse farmaceutice la prețuri accesibile, Farmacia Vitalis
+                                    este alegerea ideală. Ne dedicăm sănătății tale și îți oferim un mediu prietenos și profesionist,
+                                    unde poți avea încredere că vei găsi cele mai bune soluții pentru nevoile tale.</p>
+                                <br/>
+                                <section id="intrebari-frecvente">
+                                    <h3>Intrebari frecvente</h3>
+                                    <details>
+                                        <summary>In cat timp sunt livrate produsele comandate?</summary>
+                                        <p>Durata medie de livrare a produselor comandate este de 48-72 de ore in intreaga tara.</p>
+                                    </details>
+                                    <details>
+                                        <summary>Se pot elibera medicamente fara prescriptie medicala?</summary>
+                                        <p>Anumite medicamente se pot elibera si livra la domiciliu fara prescriptie medicala. Celelalte pot fi comandate si ridicate din magazinele noastre in interval de o saptamana de la plasarea comenzii!</p>
+                                    </details>
+                                </section>
+                                <br/>
+                                <a href="#" class="btn">Descopera gama noastra de medicamente <i class="fa-solid fa-certificate fa-beat"></i></a>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                
+                <!-- Secțiunea 2 cu promotii -->
+                <section id="promotii">
+                    <h2>Promotiile lunii</h2>
+                    <div class="table-container">
+                        <table id="tab-promotii">
+                            <caption>Produse reduse in aceasta luna</caption>
+                            <thead>
+                                <tr>
+                                    <th>Produs</th>
+                                    <th>Preti vechi (RON)</th>
+                                    <th>Pret redus (RON)</th>
+                                    <th>Reducere (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Vitamina C 1000mg</td>
+                                    <td>30</td>
+                                    <td>20</td>
+                                    <td>33</td>
+                                </tr>
+                                <tr>
+                                    <td>Magneziu + B6</td>
+                                    <td>50</td>
+                                    <td>40</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>Omega 3</td>
+                                    <td>80</td>
+                                    <td>60</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td>Calciu + D3</td>
+                                    <td>40</td>
+                                    <td>30</td>
+                                    <td>25</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">Profita de aceste oferte pana la finalul lunii!</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Secțiunea 3 calendar de evenimente -->
+                <section id="calendar">
+                    <h2>Calendar de evenimente</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rem mollitia, aliquam sunt facilis voluptatum dolore beatae enim? Veritatis voluptatibus dignissimos, nisi ad similique dolorem hic nesciunt officia. Non, dolores!</p>
+                </section>
+
+                <!-- Secțiunea 4 anunturi -->
+                <section id="anunturi">
+                    <h2>Anunturi</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab in eius quaerat enim tempore veritatis necessitatibus distinctio a molestias vitae laborum, debitis tenetur atque harum, maiores, error illum suscipit vero.</p>
+                </section>
+
+                <!-- Secțiunea 5 lista utilizatori online -->
+                <section id="utilizatori">
+                    <h2>Utilizatori</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro libero repellat veritatis tempora facilis harum mollitia! Possimus accusamus obcaecati earum quia dignissimos. Deserunt et perspiciatis quam animi maxime aperiam aliquid.</p>
+                </section>
+
+                <!-- Secțiunea 6 cu utilizatori, statistici -->
+                <section id="statistici">
+                    <h2>Statistici</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rem mollitia, aliquam sunt facilis voluptatum dolore beatae enim? Veritatis voluptatibus dignissimos, nisi ad similique dolorem hic nesciunt officia. Non, dolores!</p>
+                </section>
+
+                <!-- Secțiunea 7 site si server -->
+                <section id="server">
+                    <h2>Site si server</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rem mollitia, aliquam sunt facilis voluptatum dolore beatae enim? Veritatis voluptatibus dignissimos, nisi ad similique dolorem hic nesciunt officia. Non, dolores!</p>
+                </section>
+
+                <!-- Secțiunea 8 servicii, linkuri externe și iframe-uri -->
+                <section id="servicii-resurse">
+                    <section id="servicii">
+                        <h2>Serviciile noastre</h2>
+                        <section>
+                            <h3>Consultanță farmaceutică</h3>
+                            <p>Obține recomandări personalizate de la specialiștii noștri pentru utilizarea <i>medicamentelor</i> și <i>produselor farmaceutice</i> potrivite pentru <i>sănătatea</i> ta.</p>
+                        </section>
+                        <section>
+                            <h3>Calculul Indicelui de Masă Corporală (IMC)</h3>
+                            <p>Indicele de Masă Corporală (<abbr title="Body Mass Index">IMC</abbr>) sau <abbr title="Body Mass Index">BMI</abbr> este calculat astfel:</p>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                <mrow>
+                                    <mi>BMI</mi>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mi>greutatea (kg)</mi>
+                                        <msup>
+                                            <mi>înălțimea (m)</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                    </mfrac>
+                                </mrow>
+                            </math>
+                            <p>Folosește serviciile noastre pentru a determina <b>IMC-ul</b> și a primi sfaturi personalizate pentru <i>sănătatea</i> dumneavoastră.</p>
+                        </section>
+                    </section>
+                    <section id="resurse">
+                        <h2>Resurse suplimentare</h2>
+                        <p>Pentru mai multe informatii despre sanatate si tratament, viziteaza 
+                            <a href="https://www.reginamaria.ro/" target="_blank">site-ul nostru partener</a>.</p>
+                        <p>Urmăriți videoclipurile noastre informative:</p>
+                        <div class="container-iframe">
+                            <div class="taburi-iframe">
+                                <a href="https://www.youtube.com/embed/ZY1nsRvbTX8?si=tEzDxkD_ZtlOdqvL" target="ifr-video">Retete</a>
+                                <a href="https://www.youtube.com/embed/1pgHtU7Ktuc?si=VjPOPKitteA-IECw&amp" target="ifr-video">Prim ajutor</a>
+                                <a href="https://www.youtube.com/embed/pWlOTAe97G4?si=5MEfevVirxP_ogTu" target="ifr-video">Prescriptie</a><br/>
+                            </div>
+                            <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/ZY1nsRvbTX8?si=tEzDxkD_ZtlOdqvL" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+        
+                        <p>Descărcați <a href="/resurse/docs/detalii_medicamente.pdf" download>fisierul produselor</a> pentru mai multe detalii.</p>
+                    </section>
+                </section>
+
+                <section id="utilizator">
+                    <h2>Date utilizator</h2>
+                    <p>IP-ul tau este: <%- locals.ip %></p>
+                </section>
+            </div>    
+        </main>
+        <%- include('../fragmente/footer.ejs') %>
+    </body>
+</html>
