@@ -1,0 +1,85 @@
+{
+    "cale_galerie": "resurse/imagini/galerie",
+    "imagini": [
+      {
+        "fisier_imagine": "cutie_cu_medicamente.jpg",
+        "nume_poza": "Cutie cu Medicamente",
+        "continut_alternativ": "O cutie care contine medicamente",
+        "descriere_poza": "O cutie in care se afla medicamente",
+        "intervale_zile": [["luni", "miercuri"], ["sambata", "sambata"]],
+        "atribuire": {
+            "autor": "eberhard grossgasteiger",
+            "licenta": "CC-BY 4.0",
+            "url": "https://www.pexels.com/photo/snow-covered-mountain-under-white-sky-2437286/"
+        }
+      },
+      {
+        "fisier_imagine": "instrumente_igiena.jpg",
+        "nume_poza": "Instrumente de igiena",
+        "continut_alternativ": "Instrumente de igienizare",
+        "descriere_poza": "Instrumente ce mentin igiena bucala",
+        "intervale_zile": [["marti", "joi"]],
+        "atribuire": {
+            "autor": "eberhard grossgasteiger",
+            "licenta": "CC-BY 4.0",
+            "url": "https://www.pexels.com/photo/snow-covered-mountain-under-white-sky-2437286/"
+        }
+      },
+      {
+        "fisier_imagine": "medicamente_de_alergie.jpg",
+        "nume_poza": "Medicamente pentru alergii",
+        "continut_alternativ": "Medicamente de alergii",
+        "descriere_poza": "Medicamente folosite pentru a trata alergii",
+        "intervale_zile": [["joi", "vineri"], ["duminica", "duminica"]]
+      },
+      {
+        "fisier_imagine": "medicamente_diverse.jpg",
+        "nume_poza": "Medicamente de mai multe tipuri",
+        "continut_alternativ": "Medicamente multiple",
+        "descriere_poza": "Mai multe tipuri de medicamente",
+        "intervale_zile": [["luni", "duminica"]]
+      },
+      {
+        "fisier_imagine": "medicamente_generice.jpg",
+        "nume_poza": "Medicamente generice",
+        "continut_alternativ": "Medicamente care sunt comune",
+        "descriere_poza": "Medicamente generice, fara un anumit brand",
+        "intervale_zile": [["marti", "joi"], ["sambata", "duminica"]]
+      },
+      {
+        "fisier_imagine": "medicamente_laborator.jpg",
+        "nume_poza": "Medicamente in laborator",
+        "continut_alternativ": "Medicamente aflate in laborator",
+        "descriere_poza": "Diferite tipuri de medicamente in laborator",
+        "intervale_zile": [["miercuri", "sambata"]]
+      },
+      {
+        "fisier_imagine": "medicamente_naturiste.jpg",
+        "nume_poza": "Medicamente naturiste",
+        "continut_alternativ": "Medicamente alternative",
+        "descriere_poza": "Medicamente naturiste, remedii alternative",
+        "intervale_zile": [["luni", "joi"], ["sambata", "sambata"]]
+      },
+      {
+        "fisier_imagine": "paracetamol_capsule.jpg",
+        "nume_poza": "Paracetamol Capsule",
+        "continut_alternativ": "Capsule de paracetamol",
+        "descriere_poza": "Paracetamol sub forma de capsule",
+        "intervale_zile": [["luni", "marti"]]
+      },
+      {
+        "fisier_imagine": "research_medical.jpg",
+        "nume_poza": "Research medical",
+        "continut_alternativ": "Cercetare medicala",
+        "descriere_poza": "Materiale pentru cercetare medicala",
+        "intervale_zile": [["luni", "miercuri"], ["duminica", "duminica"]]
+      },
+      {
+        "fisier_imagine": "vas_petri.jpg",
+        "nume_poza": "Medicamente in vas petri",
+        "continut_alternativ": "Medicamente aflate intr-un vas petri",
+        "descriere_poza": "Mai multe tipuri de medicamente aflate intr-un vas petri",
+        "intervale_zile": [["marti", "sambata"]]
+      }
+    ]
+  }

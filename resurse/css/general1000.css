@@ -7,7 +7,7 @@ body {
 }
 
 #grid-pagina {
-    --grid-gap: 0.7143rem; /* 10px to rem, based on 14px root font size */
+    --grid-gap: 0.7143rem; 
     grid-template-areas: "zona-unu zona-unu"
                          "zona-doi zona-trei"
                          "zona-doi zona-patru"

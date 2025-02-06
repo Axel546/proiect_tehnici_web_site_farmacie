@@ -6,7 +6,7 @@
   background: var(--secondary-color-1);
   padding: 1rem;
   position: relative;
-  width: 100%;
+  width: 103%;
   left: -1.5%;
   border-radius: 10px;
 }
@@ -93,5 +93,3 @@
   background-color: #fff;
   transition: all 0.3s ease;
 }
-
-/*# sourceMappingURL=nav.css.map */

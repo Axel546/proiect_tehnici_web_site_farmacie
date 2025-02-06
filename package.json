@@ -4,7 +4,7 @@
   "description": "Farmacie online",
   "main": "index.js",
   "scripts": {
-    "build-scss": "sass scss/:resurse/css/",
+    "build-scss": "sass resurse/scss/:resurse/css/",
     "dev": "npm run build-scss & node index.js"
   },
   "repository": {
@@ -29,6 +29,7 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "sharp": "^0.33.5"
   }
 }

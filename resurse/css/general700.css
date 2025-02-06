@@ -12,7 +12,7 @@ header, footer, #grid-pagina > * {
 }
 
 #grid-pagina {
-    --grid-gap: 0.4167rem; /* 5px to rem, based on 12px root font size */
+    --grid-gap: 0.4167rem;
     grid-template-areas: "zona-unu"
                          "zona-doi"
                          "zona-trei"
@@ -29,6 +29,6 @@ header, footer, #grid-pagina > * {
     box-sizing: border-box;
 }
 
-#tab-materiale {
+#tab-promotii {
     min-width: 58.3333rem; /* 700px to rem, based on 12px root font size */
 }

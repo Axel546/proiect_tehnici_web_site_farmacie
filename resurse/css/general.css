@@ -133,7 +133,6 @@ nav ul li a:hover {
     border: 0.2778rem solid var(--border-color); /* 5px to rem */
 }
 
-/* Iframe */
 .container-iframe {
     display: flex;
     flex-direction: row-reverse;
@@ -259,7 +258,6 @@ mo {
     color: var(--math-color-3);
 }
 
-/* Testimoniale resurse */
 ul {
     list-style-type: none;
     padding: 0;
@@ -346,7 +344,7 @@ section#servicii-resurse {
     background: #2a5ebd;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     #prezentare .container {
         flex-direction: column;
         text-align: center;
