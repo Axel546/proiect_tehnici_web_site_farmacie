@@ -126,9 +126,10 @@
 		margin-left:3cm;
 		margin-right:1cm;
 	}
-	@page:right{
+	@page:right{ /*adica cele pare*/
 		margin-right:3cm;
 		margin-left:1cm;
+        margin-top: 4cm;
 	}
     #produse,
     #calendar,

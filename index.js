@@ -3,6 +3,19 @@ const path = require('path');
 const fs = require('fs');
 const sass = require('sass');
 const sharp = require('sharp');
+const pg = require('pg');
+
+const Client = pg.Client;
+
+let client = new Client({
+    database: "proiect",
+    user: "alexandru",
+    password: "alexandru2006",
+    host: "localhost",
+    port: 5432
+});
+
+client.connect();
 
 const app = express()
 
@@ -20,15 +33,30 @@ let obGlobal = {
     folderBackup: path.join(__dirname, "backup")
 }
 
-let vect_foldere = ["temp", "backup"];
+let foldere_create = 0;
+let vect_foldere = ["temp", "backup", "poze-uploadate", "examen", "test", "proiect"];
 for (let folder of vect_foldere) {
     let folderCaleAbsoluta = path.join(__dirname, folder);
     if (!fs.existsSync(folderCaleAbsoluta)) {
+        foldere_create++;
         fs.mkdirSync(folderCaleAbsoluta);
     }
 }
+console.log("S-au creat: " + foldere_create + " foldere");
 
 app.use("/resurse", express.static(path.join(__dirname, "resurse")));
+
+// Trimit categoriile in toate paginilie
+app.use((req, res, next) => {
+    client.query("SELECT * FROM unnest(enum_range(null::categ_produse))", function(err, rezOptiuni) {
+        if(err){
+            next(err);
+        } else {
+            res.locals.optiuni = rezOptiuni.rows;
+            next();
+        }
+    });
+});
 
 app.get("/favicon.ico", (_req, res) => {
     res.sendFile(path.join(__dirname, "resurse/imagini/ico/favicon.ico"));
@@ -40,6 +68,31 @@ app.get(["/","/index","/home"], (req, res) => {
 
 app.get("/galerie", (req,res) => {
     res.render("pagini/galerie", { imagini:obGlobal.obImagini.imagini });
+});
+
+app.get("/produse", (req, res) => {
+    let conditieQuery = "";
+    if (req.query.tip) {
+        conditieQuery = ` WHERE categorie = '${req.query.tip}'`;
+    }
+    client.query(`SELECT * FROM produse ${conditieQuery}`, function(err, rez) {
+        if (err) {
+            afisareEroare(res, 500);
+        } else {
+            res.render("pagini/produse", { produse: rez.rows });
+        }
+    });
+});
+
+app.get("/produs/:id", (req, res) => {
+    let idProdus = req.params.id;
+    client.query(`SELECT * FROM produse WHERE id = ${idProdus}`, function(err, rez) {
+        if (err || rez.rows.length == 0) {
+            afisareEroare(res, 404, "Produs negasit", "Produsul cu id-ul specificat nu exista.");
+        } else {
+            res.render("pagini/produs", { prod: rez.rows[0] });
+        }
+    });
 });
 
 app.get(/^\/resurse\/[a-z0-9A-Z\/]*$/, (_req, res) => {
@@ -55,7 +108,7 @@ app.get("/*", (req, res) => {
         res.render("pagini"+req.url, function(err, rezRandare){
             if (err) {
                 if (err.message.startsWith("Failed to lookup view")) {
-                    afisareEroare(res, 404, "Pagina negasita", "Verificati calea URL-ului");
+                    afisareEroare(res, 404, "Pagina "+ req.protocol + '://' + req.get('host') + req.originalUrl + " negasita", "Verificati calea URL-ului");
                 } else {
                     afisareEroare(res, -1);
                 }
@@ -65,7 +118,7 @@ app.get("/*", (req, res) => {
         });
     } catch (err1) {
         if (err1.message.startsWith("Cannot find module")) {
-            afisareEroare(res, 404, "Pagina negasita", "Verificati calea URL-ului");
+            afisareEroare(res, 404, "Pagina " + req.protocol + '://' + req.get('host') + req.originalUrl + " negasita", "Verificati calea URL-ului");
         } else {
             afisareEroare(res, -1);
         }

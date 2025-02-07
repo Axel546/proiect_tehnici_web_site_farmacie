@@ -5,6 +5,11 @@
         let data = new Date()
         let vectorZile=["luni","marti","miercuri","joi","vineri","sambata","duminica"];
 
+        function isFirstHalfMinute() {
+            const date = new Date();
+            return date.getSeconds() < 30;
+        }
+
         //javascript incepe numaratoarea zilelor de duminica, care are indexul 0.
         let zi = data.getDay();
         zi--;
@@ -29,7 +34,41 @@
             nr_corect_poze -= 2;
         
         nr_corect_poze = Math.max(0,nr_corect_poze);
-        
+
+        console.log(imagini[0].nume_poza + " " + imagini[1].nume_poza);
+
+        [imagini[0],imagini[1]] = [imagini[1],imagini[0]];
+
+        let ok = isFirstHalfMinute();
+
+        if(ok)
+        {
+            for(let imag of imagini){
+                %>
+                    <figure class="gallery-item">
+                        <picture>
+                        <source media="(max-width: 600px)" srcset="<%- imag.fisier_mic %>">
+                        <source media="(max-width: 1200px)" srcset="<%- imag.fisier_mediu %>">
+                        <img 
+                            src="<%- imag.fisier %>" 
+                            alt="<%- imag.continut_alternativ || imag.nume_poza %>"
+                            title="<%= imag.descriere_poza %>"
+                        >
+                        </picture>
+                        <figcaption>
+                        <%- imag.descriere_poza %>
+                        <% if (imag.atribuire) { %>
+                            <small class="attribution">
+                            Photo by <a href="<%- imag.atribuire.url %>"><%= imag.atribuire.autor %></a> 
+                            (<%= imag.atribuire.licenta %>)
+                            </small>
+                        <% } %>
+                        </figcaption>
+                    </figure>
+                <% 
+            }
+        }
+        else
         for(let imag of imagini){
             for(let interval of imag.intervale_zile)
             {

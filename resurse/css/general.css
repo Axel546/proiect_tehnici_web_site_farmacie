@@ -48,10 +48,10 @@ nav ul li a:hover {
     --grid-gap: 1.25rem; /* 20px to rem */
     display: grid;
     grid-template-areas: "zona-unu zona-unu zona-unu zona-unu"
-                         "zona-doi zona-doi zona-opt zona-opt"
+                         "zona-patru zona-patru zona-opt zona-opt"
                          "zona-trei zona-sase zona-opt zona-opt"
                          "zona-cinci zona-sase zona-opt zona-opt"
-                         "zona-cinci zona-patru zona-patru zona-sapte";
+                         "zona-cinci zona-doi zona-doi zona-sapte";
     grid-gap: var(--grid-gap);
     padding-top: var(--grid-gap);
     padding-bottom: var(--grid-gap);
@@ -103,7 +103,7 @@ nav ul li a:hover {
 
 #tab-promotii {
     caption-side: bottom;
-    background-color: var(--table-background-color);
+    /*background-color: var(--table-background-color);*/
     border: 0.2778rem double var(--border-color); /* 5px to rem */
     border-collapse: collapse;
 }
@@ -116,14 +116,22 @@ nav ul li a:hover {
 
 #tab-promotii th:nth-child(odd),
 #tab-promotii td:nth-child(odd) {
-    color: var(--secondary-color-3);
+    color: var(--secondary-color-4);
     text-shadow: var(--text-shadow);
 }
 
 #tab-promotii th:nth-child(even),
 #tab-promotii td:nth-child(even) {
-    color: var(--secondary-color-4);
+    color: var(--secondary-color-1);
     text-shadow: var(--text-shadow);
+}
+
+#tab-promotii tr:nth-child(even){
+    box-shadow: red;
+}
+
+#tab-promotii tr:nth-child(odd){
+    box-shadow: blue;
 }
 
 #tab-promotii tr:hover th,
@@ -133,9 +141,13 @@ nav ul li a:hover {
     border: 0.2778rem solid var(--border-color); /* 5px to rem */
 }
 
+#tab-promotii td:hover + td{
+    background-color: green;
+}
+
 .container-iframe {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     align-items: flex-start;
     justify-content: flex-end;
 }
@@ -147,11 +159,11 @@ nav ul li a:hover {
 
 .taburi-iframe {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .taburi-iframe>a {
-    width: 8.3333rem; /* 150px to rem */
+    width: 6.3333rem; /* 150px to rem */
     height: 2.2222rem; /* 40px to rem */
     line-height: 2.2222rem; /* 40px to rem */
     text-align: center;
@@ -167,7 +179,7 @@ nav ul li a:hover {
 
 .taburi-iframe>a:hover {
     background-color: var(--secondary-color-3);
-    width: 10rem; /* 180px to rem */
+    /*height: 10rem; /* 180px to rem */
 }
 
 /* link top */

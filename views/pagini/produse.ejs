@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head.ejs') %>
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <%- include('../fragmente/header.ejs') %>
+    <main class="products-page">
+        <div class="container">
+            <section class="filters bg-white rounded shadow-sm p-4 mb-4">
+                <div class="row g-3">
+                    <!-- Text search -->
+                    <div class="col-md-4">
+                        <label for="search" class="form-label">Caută:</label>
+                        <input type="text" id="search" class="form-control" placeholder="Caută produse...">
+                    </div>
+    
+                    <!-- Price range -->
+                    <div class="col-md-4">
+                        <label for="price" class="form-label">Preț:</label>
+                        <input type="range" id="price" class="form-range" min="0" max="100" step="5" value="100">
+                        <div class="d-flex justify-content-between">
+                            <span class="min">0 RON</span>
+                            <span class="current"></span>
+                            <span class="max">100 RON</span>
+                        </div>
+                    </div>
+    
+                    <!-- Tip produs radio buttons -->
+                    <div class="col-md-4">
+                        <label class="form-label">Tip produs:</label>
+                        <div class="btn-group" role="group">
+                            <input type="radio" class="btn-check" name="tip_produs" id="tip-all" value="all" checked>
+                            <label class="btn btn-outline-primary" for="tip-all">Toate</label>
+    
+                            <input type="radio" class="btn-check" name="tip_produs" id="tip-antibiotic" value="antibiotic">
+                            <label class="btn btn-outline-primary" for="tip-antibiotic">Antibiotic</label>
+    
+                            <input type="radio" class="btn-check" name="tip_produs" id="tip-antiinflamator" value="anti-inflamator">
+                            <label class="btn btn-outline-primary" for="tip-antiinflamator">Anti-inflamator</label>
+    
+                            <input type="radio" class="btn-check" name="tip_produs" id="tip-calmant" value="calmant">
+                            <label class="btn btn-outline-primary" for="tip-calmant">Calmant</label>
+                        </div>
+                    </div>
+    
+                    <!-- Tip ambalaj -->
+                    <div class="col-md-4">
+                        <label for="ambalaj" class="form-label">Tip ambalaj:</label>
+                        <select id="ambalaj" class="form-select">
+                            <option value="">Oricare</option>
+                            <option value="tablete">Tablete</option>
+                            <option value="flacoane">Flacoane</option>
+                            <option value="capsule">Capsule</option>
+                            <option value="plicuri">Plicuri</option>
+                            <option value="drajeuri">Drajeuri</option>
+                            <option value="crema">Cremă</option>
+                            <option value="gel">Gel</option>
+                            <option value="shoturi">Shoturi</option>
+                            <option value="kit">Kit</option>
+                            <option value="lichid">Lichid</option>
+                        </select>
+                    </div>
+    
+                    <!-- Ingrediente multi-select -->
+                    <div class="col-md-4">
+                        <label for="ingrediente" class="form-label">Ingrediente:</label>
+                        <select id="ingrediente" class="form-select" multiple>
+                            <option value="vitamina_c">Vitamina C</option>
+                            <option value="zinc">Zinc</option>
+                            <option value="acid_hialuronic">Acid Hialuronic</option>
+                            <option value="ibuprofen">Ibuprofen</option>
+                            <option value="mentol">Mentol</option>
+                        </select>
+                    </div>
+    
+                    <!-- Luni disponibilitate -->
+                    <div class="col-md-4">
+                        <label for="months" class="form-label">Luni disponibilitate:</label>
+                        <select id="months" class="form-select" multiple>
+                            <option value="1" selected>Ianuarie</option>
+                            <option value="2" selected>Februarie</option>
+                            <option value="3" selected>Martie</option>
+                            <option value="4" selected>Aprilie</option>
+                            <option value="5" selected>Mai</option>
+                            <option value="6" selected>Iunie</option>
+                            <option value="7" selected>Iulie</option>
+                            <option value="8" selected>August</option>
+                            <option value="9" selected>Septembrie</option>
+                            <option value="10" selected>Octombrie</option>
+                            <option value="11" selected>Noiembrie</option>
+                            <option value="12" selected>Decembrie</option>
+                        </select>
+                    </div>
+    
+                    <!-- Discount checkbox -->
+                    <div class="col-md-4">
+                        <div class="form-check mt-4">
+                            <input type="checkbox" id="discount" class="form-check-input">
+                            <label class="form-check-label" for="discount">
+                                Afișează doar produsele cu discount (preț peste 50 RON)
+                            </label>
+                        </div>
+                    </div>
+    
+                    <!-- Descriere textarea -->
+                    <div class="col-12">
+                        <label for="descriere" class="form-label">Descriere:</label>
+                        <textarea id="descriere" class="form-control" placeholder="Caută în descriere..."></textarea>
+                    </div>
+                </div>
+    
+                <div class="d-flex gap-2 flex-wrap mt-4">
+                    <button id="filter-btn" class="btn btn-primary">Filtrează</button>
+                    <button id="sort-asc" class="btn btn-secondary">Sortare Crescătoare</button>
+                    <button id="sort-desc" class="btn btn-secondary">Sortare Descrescătoare</button>
+                    <button id="calculate" class="btn btn-info">Calculează Media Prețurilor</button>
+                    <button id="reset" class="btn btn-outline-danger">Resetează Filtrele</button>
+                </div>
+            </section>
+    
+            <section class="products-grid row row-cols-2 row-cols-md-2 row-cols-xl-2 g-4">
+                <% for(let product of produse) { %>
+                    <div class="col">
+                        <article id="produs_<%= product.id %>" class="product-card card h-100 <%= product.categorie %>" 
+                                data-tip-produs="<%= product.tip_produs %>"
+                                data-ambalaj="<%= product.tip_ambalaj %>"
+                                data-ingrediente="<%= product.ingrediente.join(',') %>">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <div class="position-relative">
+                                        <img src="/resurse/imagini/produse/<%= product.imagine %>" class="img-fluid rounded-start" alt="<%= product.nume %>">
+                                        <div class="position-absolute bottom-0 start-0 end-0 bg-dark bg-opacity-75 text-white p-2">
+                                            <div class="d-flex justify-content-between">
+                                                <span class="category"><%= product.categorie %></span>
+                                                <span class="price"><%= product.pret %> RON</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h3 class="card-title"><a href="/produs/<%- product.id %>"><%= product.nume.replace(/_/g, ' ') %></a></h3>
+                                        <details class="mb-3">
+                                            <summary class="text-primary fw-bold">Specificații</summary>
+                                            <ul class="list-unstyled mt-2">
+                                                <li><strong>Tip produs:</strong> <em><%= product.tip_produs %></em></li>
+                                                <li><strong>Ingrediente:</strong> <em><%= product.ingrediente.join(', ') %></em></li>
+                                                <li><strong>Cantitate:</strong> <em><%= product.cantitate %> <%= product.tip_ambalaj %></em></li>
+                                                <li><strong>Data adăugării:</strong> <em><time datetime="<%= product.data_adaugare %>"><%= new Date(product.data_adaugare).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' }) %></time></em></li>
+                                                <li><strong>Necesită rețetă:</strong> <em><%= product.cu_reteta ? 'Da' : 'Nu' %></em></li>
+                                            </ul>
+                                        </details>
+                                        <p class="card-text description"><%= product.descriere %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                <% }; %>
+            </section>
+        </div>
+    </main>
+    <%- include('../fragmente/footer.ejs') %>   
+    <script src="/resurse/js/produse.js"></script>
+</body>
+</html>

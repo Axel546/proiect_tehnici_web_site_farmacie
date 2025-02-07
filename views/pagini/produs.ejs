@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head.ejs') %>
+
+    <link rel="stylesheet" href="/resurse/css/general.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/general1000.css" type="text/css" media="screen and (max-width:1200px)"/>
+    <link rel="stylesheet" href="/resurse/css/general700.css" type="text/css" media="screen and (max-width:700px)"/>
+
+    <link rel="stylesheet" href="/resurse/css/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/nav1000.css" type="text/css" media="screen and (max-width:1000px)" />
+    <link rel="stylesheet" href="/resurse/css/nav700.css" type="text/css" media="screen and (max-width:700px)" />
+
+    <link rel="stylesheet" href="/resurse/css/custom.css" type="text/css" />
+
+    <linK rel="stylesheet" href="/resurse/css/printare.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/eroare.css" type="text/css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+
+    <style>
+        section{
+            align-items: center;
+        }
+        img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <%- include('../fragmente/header.ejs') %>
+    <main>
+        <div class="container">
+            <section>
+                <br/>
+                <h2>Pagină produs</h2>
+                <br/>
+                <br/>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <br/>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
+                    <p>Tip produs: <span class="categorie"><%- locals.prod.tip_produs %> </span></p>
+                    <p>Mod ambalare: <span class="categorie"><%- locals.prod.tip_ambalaj %> </span></p>
+                    <p>Nr. unitati: <span class="categorie"><%- locals.prod.unitati %> </span></p>
+                    <p>Toate materialele: <span class="categorie"><%- locals.prod.ingrediente %> </span></p>
+                    <p>Se elibereaza cu reteta: <span class="categorie"><%- locals.prod.cu_reteta %> </span></p>
+
+                    <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
+                    <figure class="imag-produs">
+                        <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>    
+                </article>
+            </section>
+        </div>
+    </main>
+    <%- include('../fragmente/footer.ejs') %>   
+</body>
+</html>
